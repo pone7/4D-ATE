@@ -1,0 +1,13 @@
+name: aet-bench
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - scipy
+  - scikit-image
+  - matplotlib
+  - pytest
+  - pip
+  - pip:
+      - tqdm

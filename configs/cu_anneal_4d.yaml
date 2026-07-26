@@ -1,0 +1,42 @@
+# 4D Cu annealing reconstruction with temporal deformation field
+source_path: "/data/aet-bench/data/cu_anneal_4d/data.pkl"
+model_path: "/data/aet-bench/output/cu_anneal_4d"
+
+# PipelineParams
+haadf_gamma: 1.7
+
+# OptimizationParams
+iterations: 15000
+densify_from_iter: 300
+densify_until_iter: 7000
+densification_interval: 100
+densify_grad_threshold: 5.0e-5
+max_num_gaussians: 200000
+lambda_dssim: 0.25
+lambda_tv: 0.05
+lambda_prior: 1.0
+tv_vol_size: 32
+
+# ModelHiddenParams — ENABLE 4D deformation
+no_dx: false
+no_ds: false
+no_dr: false
+no_do: true
+no_grid: false
+
+# HexPlane config
+net_width: 64
+defor_depth: 1
+bounds: 1.6
+kplanes_config:
+  grid_dimensions: 2
+  input_coordinate_dim: 4
+  output_coordinate_dim: 32
+  resolution: [64, 64, 64, 50]
+
+multires: [1, 2, 4]
+
+# Temporal regularization
+time_smoothness_weight: 0.01
+plane_tv_weight: 0.0001
+l1_time_planes: 0.0001
