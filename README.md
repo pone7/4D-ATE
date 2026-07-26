@@ -1,7 +1,25 @@
 # AET-Bench — anonymized review bundle
 
 This bundle accompanies the authors' response for submission 3869. It contains
-the evaluation code that reviewers asked to inspect, plus two figure files.
+the evaluation code reviewers asked to inspect, plus the two revised teaser
+figures.
+
+## Figures
+
+**Figure 1 — pixel-accurate is not atom-accurate.** A reconstruction can be
+pixel-accurate while the atom model extracted from it is wrong: atoms can be
+missed, merged, hallucinated, or given the wrong species.
+
+![Figure 1](figures/fig1_concept.png)
+
+**Figure 2 — the AET-Bench realism ladder.** Six tiers, each adding one source
+of difficulty: localization, chemistry, trajectories, scattering physics,
+experimental reference agreement, and dynamic tracking. Renderings are produced
+from the benchmark data by `scripts/generate_paper_assets.py`; the 4D tile shows
+real per-atom trajectories across the ten phases, zoomed onto one neighbourhood
+so the true sub-nanometre displacements are legible.
+
+![Figure 2](figures/fig2_realism_ladder.png)
 
 ## Layout
 
@@ -14,7 +32,7 @@ scripts/          evaluation harness, method wrappers, metrics, analyses
   generate_paper_assets.py    regenerates every paper table and figure
 tests/            unit tests, incl. the extraction-ceiling regression guard
 configs/          method configuration files
-figures/          the two revised teaser figures
+figures/          the two teaser figures above (PNG + PDF)
 ```
 
 ## Quickstart
