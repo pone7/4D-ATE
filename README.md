@@ -10,7 +10,7 @@ figures.
 pixel-accurate while the atom model extracted from it is wrong: atoms can be
 missed, merged, hallucinated, or given the wrong species.
 
-![Figure 1](figures/fig1_concept.pdf)
+![Figure 1](figures/fig1_concept.png)
 
 **Figure 2 — the AET-Bench realism ladder.** Six tiers, each adding one source
 of difficulty: localization, chemistry, trajectories, scattering physics,
