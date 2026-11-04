@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use AET-Bench, please cite the paper below."
+title: "AET-Bench: Pixel-Accurate Atomic Tomography Is Not Atom-Accurate"
+authors:
+  - family-names: Liu
+    given-names: Zicheng
+  - family-names: Ma
+    given-names: Wenzhuo
+  - family-names: Chen
+    given-names: Jintao
+  - family-names: Huang
+    given-names: Di
+license: MIT
+repository-code: "https://github.com/pone7/4D-ATE"
+url: "https://huggingface.co/datasets/pone7/4D-ATE"
+preferred-citation:
+  type: conference-paper
+  title: "AET-Bench: Pixel-Accurate Atomic Tomography Is Not Atom-Accurate"
+  authors:
+    - family-names: Liu
+      given-names: Zicheng
+    - family-names: Ma
+      given-names: Wenzhuo
+    - family-names: Chen
+      given-names: Jintao
+    - family-names: Huang
+      given-names: Di
+  collection-title: "Advances in Neural Information Processing Systems (NeurIPS), Evaluations and Datasets Track"
+  year: 2026

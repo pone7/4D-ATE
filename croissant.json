@@ -1,0 +1,810 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "sc": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "dct": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "name": "AET-Bench",
+  "description": "AET-Bench: A Comprehensive Benchmark for Atomic Electron Tomography Reconstruction. 755 samples across 6 data tiers (analytical simulation, binary alloys, 4D dynamics, multislice, real experimental from published studies, Brownian Pt nanocrystals), 14 primary reconstruction methods from 5 algorithmic families (plus supplementary baselines), 4 evaluation tasks, and 14,000+ result rows.",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://huggingface.co/datasets/pone7/4D-ATE",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "version": "1.0.0",
+  "datePublished": "2026-04-10",
+  "creator": [
+    {
+      "@type": "sc:Person",
+      "name": "Zicheng Liu"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Wenzhuo Ma"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Jintao Chen"
+    },
+    {
+      "@type": "sc:Person",
+      "name": "Di Huang"
+    }
+  ],
+  "keywords": [
+    "atomic electron tomography",
+    "HAADF-STEM",
+    "3D reconstruction",
+    "4D dynamic imaging",
+    "Gaussian splatting",
+    "benchmark",
+    "nanoparticle",
+    "materials science"
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-samples.csv",
+      "name": "aet-bench-samples.csv",
+      "description": "One row per released AET-Bench sample, including paths to sample metadata, NAF pickle data, and atom coordinates.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-samples.csv",
+      "encodingFormat": "text/csv",
+      "contentSize": "260124 B",
+      "sha256": "cf28c95685743acf1272a098f7bc73f295c7c4bb8afea7d45e266411ac89ee7f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-results.csv",
+      "name": "aet-bench-results.csv",
+      "description": "Columnar view of the benchmark result log for Croissant validators and reviewer inspection.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-results.csv",
+      "encodingFormat": "text/csv",
+      "contentSize": "937719 B",
+      "sha256": "b147cc1fb4ff3e278c8232392a9042cb133d3cdb431fa2198afecce4a8eda0c1"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "results.jsonl",
+      "name": "results.jsonl",
+      "description": "Canonical benchmark result log used by paper table and figure generation.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/results.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "contentSize": "26055448 B",
+      "sha256": "399875278020a7fcc9d66847b4586d998e61eeff8c473cca55c8acb3d326bef4"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-mono.tar.part-000",
+      "name": "aet-bench-mono.tar.part-000",
+      "description": "Part 1 of 5 for aet-bench-mono.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 926adcfb2fc73c1d62b8c44befc9963540899f55a07669022da99c0376674602.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-mono.tar.part-000",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "8589934592 B",
+      "sha256": "30a5a4eaca7a8bd0d28db34cc837222f600d5f5773f57d312860a05aaa314e9f"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-mono.tar.part-001",
+      "name": "aet-bench-mono.tar.part-001",
+      "description": "Part 2 of 5 for aet-bench-mono.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 926adcfb2fc73c1d62b8c44befc9963540899f55a07669022da99c0376674602.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-mono.tar.part-001",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "8589934592 B",
+      "sha256": "c9b09f2e34fbb0ffcd4a72ed34ca8011bff831643812122b0228782f13a8f893"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-mono.tar.part-002",
+      "name": "aet-bench-mono.tar.part-002",
+      "description": "Part 3 of 5 for aet-bench-mono.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 926adcfb2fc73c1d62b8c44befc9963540899f55a07669022da99c0376674602.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-mono.tar.part-002",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "8589934592 B",
+      "sha256": "d6919ee3264ae531f3d03409b58699ed3d36ecf7cb842cc44e926925cfd32cf6"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-mono.tar.part-003",
+      "name": "aet-bench-mono.tar.part-003",
+      "description": "Part 4 of 5 for aet-bench-mono.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 926adcfb2fc73c1d62b8c44befc9963540899f55a07669022da99c0376674602.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-mono.tar.part-003",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "8589934592 B",
+      "sha256": "1679247e483d4e5e0cab6fd7156f1c151419d8ac4aaa352159d7e78541da66d8"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-mono.tar.part-004",
+      "name": "aet-bench-mono.tar.part-004",
+      "description": "Part 5 of 5 for aet-bench-mono.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 926adcfb2fc73c1d62b8c44befc9963540899f55a07669022da99c0376674602.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-mono.tar.part-004",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "1949233152 B",
+      "sha256": "c36f7a8f2817b4220abd4d8214cd0374c207f698db67fcd0e9a6c66abbabcaf2"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "mono-files",
+      "name": "mono tier files",
+      "containedIn": [
+        {
+          "@id": "aet-bench-mono.tar.part-000"
+        },
+        {
+          "@id": "aet-bench-mono.tar.part-001"
+        },
+        {
+          "@id": "aet-bench-mono.tar.part-002"
+        },
+        {
+          "@id": "aet-bench-mono.tar.part-003"
+        },
+        {
+          "@id": "aet-bench-mono.tar.part-004"
+        }
+      ],
+      "encodingFormat": "application/octet-stream",
+      "includes": "data/aet_bench/mono/**/*",
+      "description": "Files contained in the reconstructed aet-bench-mono.tar archive. Concatenate the listed parts before extracting."
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-bi.tar.part-000",
+      "name": "aet-bench-bi.tar.part-000",
+      "description": "Part 1 of 3 for aet-bench-bi.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 6661b6b85c267e28010d479e854a95a84cf5bab8dde45cc0ed6a247b7a85b3e2.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-bi.tar.part-000",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "8589934592 B",
+      "sha256": "40ce4a10dc709d60abb1f1d48d5ad4faa5f0a00141623d4e8d4f450d4f7417d7"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-bi.tar.part-001",
+      "name": "aet-bench-bi.tar.part-001",
+      "description": "Part 2 of 3 for aet-bench-bi.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 6661b6b85c267e28010d479e854a95a84cf5bab8dde45cc0ed6a247b7a85b3e2.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-bi.tar.part-001",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "8589934592 B",
+      "sha256": "fe38c030d152d16d8a84bca7da408bf9bf65f6c2b42ca858a27a8284030f79b9"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-bi.tar.part-002",
+      "name": "aet-bench-bi.tar.part-002",
+      "description": "Part 3 of 3 for aet-bench-bi.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 6661b6b85c267e28010d479e854a95a84cf5bab8dde45cc0ed6a247b7a85b3e2.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-bi.tar.part-002",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "4075012096 B",
+      "sha256": "a9068c1d6a7627f1398d0a24c7b4e16e491ade92ad7c27edf3e4c16ab940ee09"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "bi-files",
+      "name": "bi tier files",
+      "containedIn": [
+        {
+          "@id": "aet-bench-bi.tar.part-000"
+        },
+        {
+          "@id": "aet-bench-bi.tar.part-001"
+        },
+        {
+          "@id": "aet-bench-bi.tar.part-002"
+        }
+      ],
+      "encodingFormat": "application/octet-stream",
+      "includes": "data/aet_bench/bi/**/*",
+      "description": "Files contained in the reconstructed aet-bench-bi.tar archive. Concatenate the listed parts before extracting."
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-sim4d.tar",
+      "name": "aet-bench-sim4d.tar",
+      "description": "AET-Bench sim4d tier archive.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-sim4d.tar",
+      "encodingFormat": "application/x-tar",
+      "contentSize": "885698560 B",
+      "sha256": "7b9bac6e5dcf3e4936739fa045a65bc572b40f00f476a7848918096bdd981a69"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "sim4d-files",
+      "name": "sim4d tier files",
+      "containedIn": {
+        "@id": "aet-bench-sim4d.tar"
+      },
+      "encodingFormat": "application/octet-stream",
+      "includes": "data/aet_bench/sim4d/**/*"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-multislice.tar",
+      "name": "aet-bench-multislice.tar",
+      "description": "AET-Bench multislice tier archive.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-multislice.tar",
+      "encodingFormat": "application/x-tar",
+      "contentSize": "264232960 B",
+      "sha256": "607f547505f4c6a4ae32899be088107a41918728544b224897be81bde9c528fa"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "multislice-files",
+      "name": "multislice tier files",
+      "containedIn": {
+        "@id": "aet-bench-multislice.tar"
+      },
+      "encodingFormat": "application/octet-stream",
+      "includes": "data/aet_bench/multislice/**/*"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-real.tar.part-000",
+      "name": "aet-bench-real.tar.part-000",
+      "description": "Part 1 of 2 for aet-bench-real.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 7e433949b0c53d739b594bf724d4505e7e348b7ca1113e0838da630ae242e43d.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-real.tar.part-000",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "8589934592 B",
+      "sha256": "edca645c96ef5fd2005074f22eaa3c79e5f7fac29a9b344b2fb084c60a37b58a"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-real.tar.part-001",
+      "name": "aet-bench-real.tar.part-001",
+      "description": "Part 2 of 2 for aet-bench-real.tar. Concatenate all parts in lexical order to reconstruct the original tar; original SHA256: 7e433949b0c53d739b594bf724d4505e7e348b7ca1113e0838da630ae242e43d.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-real.tar.part-001",
+      "encodingFormat": "application/octet-stream",
+      "contentSize": "2051053568 B",
+      "sha256": "cf13be71439e28098ead39894a63376f0683bce1e65a3ee6026f40aa9bf15a4e"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "real-files",
+      "name": "real tier files",
+      "containedIn": [
+        {
+          "@id": "aet-bench-real.tar.part-000"
+        },
+        {
+          "@id": "aet-bench-real.tar.part-001"
+        }
+      ],
+      "encodingFormat": "application/octet-stream",
+      "includes": "data/aet_bench/real/**/*",
+      "description": "Files contained in the reconstructed aet-bench-real.tar archive. Concatenate the listed parts before extracting."
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "aet-bench-brownian_pt.tar",
+      "name": "aet-bench-brownian_pt.tar",
+      "description": "AET-Bench brownian_pt tier archive.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/aet-bench-brownian_pt.tar",
+      "encodingFormat": "application/x-tar",
+      "contentSize": "5796802560 B",
+      "sha256": "1ddd636ccc8228e7395953848dc831ced42d61e5e27d47e836b1fe62357e305e"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "brownian_pt-files",
+      "name": "brownian_pt tier files",
+      "containedIn": {
+        "@id": "aet-bench-brownian_pt.tar"
+      },
+      "encodingFormat": "application/octet-stream",
+      "includes": "data/aet_bench/brownian_pt/**/*"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "ORIGINAL_ARCHIVE_SHA256SUMS",
+      "name": "ORIGINAL_ARCHIVE_SHA256SUMS",
+      "description": "AET-Bench release metadata file ORIGINAL_ARCHIVE_SHA256SUMS.",
+      "contentUrl": "https://huggingface.co/datasets/pone7/4D-ATE/resolve/main/ORIGINAL_ARCHIVE_SHA256SUMS",
+      "encodingFormat": "text/plain",
+      "contentSize": "522 B",
+      "sha256": "b28c26c4ab58b1ddb7670d8d95c965fdbde83ee7d6099a9dd40fa8df7c7574e8"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "samples",
+      "name": "samples",
+      "description": "One row per released AET-Bench sample.",
+      "key": {
+        "@id": "samples/sample_id"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "samples/sample_id",
+          "name": "sample_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "sample_id"
+            }
+          },
+          "description": "Unique sample identifier."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/subset",
+          "name": "subset",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "subset"
+            }
+          },
+          "description": "Data tier."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/element",
+          "name": "element",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "element"
+            }
+          },
+          "description": "Chemical element or element system."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/n_atoms",
+          "name": "n_atoms",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "n_atoms"
+            }
+          },
+          "description": "Number of reference atoms, if available."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/n_angles",
+          "name": "n_angles",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "n_angles"
+            }
+          },
+          "description": "Number of projection angles."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/has_atom_gt",
+          "name": "has_atom_gt",
+          "dataType": "sc:Boolean",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "has_atom_gt"
+            }
+          },
+          "description": "Whether atom-level reference coordinates are included."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/metadata_path",
+          "name": "metadata_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "metadata_path"
+            }
+          },
+          "description": "Path to per-sample metadata JSON inside the release archives."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/data_pickle_path",
+          "name": "data_pickle_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "data_pickle_path"
+            }
+          },
+          "description": "Path to the NAF-format pickle inside the release archives."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/atoms_gt_path",
+          "name": "atoms_gt_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "atoms_gt_path"
+            }
+          },
+          "description": "Path to atom-coordinate NumPy file, if available."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/atoms_gt_4d_path",
+          "name": "atoms_gt_4d_path",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "atoms_gt_4d_path"
+            }
+          },
+          "description": "Path to 4D atom-coordinate NumPy file, if available."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/tier_archive",
+          "name": "tier_archive",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "tier_archive"
+            }
+          },
+          "description": "Archive containing the sample files."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/archive_member_prefix",
+          "name": "archive_member_prefix",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "archive_member_prefix"
+            }
+          },
+          "description": "Directory prefix for the sample inside the tier archive."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "samples/source",
+          "name": "source",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-samples.csv"
+            },
+            "extract": {
+              "column": "source"
+            }
+          },
+          "description": "Original source for real-data samples when applicable."
+        }
+      ]
+    },
+    {
+      "@type": "cr:RecordSet",
+      "@id": "results",
+      "name": "results",
+      "description": "Benchmark evaluation results.",
+      "key": {
+        "@id": "results/result_row_id"
+      },
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "results/result_row_id",
+          "name": "result_row_id",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "result_row_id"
+            }
+          },
+          "description": "Stable row number in the release CSV."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/sample_id",
+          "name": "sample_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "sample_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/subset",
+          "name": "subset",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "subset"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/method",
+          "name": "method",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "method"
+            }
+          },
+          "description": "Reconstruction method identifier."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/task",
+          "name": "task",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "task"
+            }
+          },
+          "description": "Evaluation task identifier."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/vol_psnr",
+          "name": "vol_psnr",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "vol_psnr"
+            }
+          },
+          "description": "Peak signal-to-noise ratio."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/vol_ssim",
+          "name": "vol_ssim",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "vol_ssim"
+            }
+          },
+          "description": "Structural similarity index."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/fsc_0.143_angstrom",
+          "name": "fsc_0.143_angstrom",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "fsc_0.143_angstrom"
+            }
+          },
+          "description": "Fourier shell correlation resolution at threshold 0.143."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/recall",
+          "name": "recall",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "recall"
+            }
+          },
+          "description": "Atom localization recall."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/precision",
+          "name": "precision",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "precision"
+            }
+          },
+          "description": "Atom localization precision."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/f1",
+          "name": "f1",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "f1"
+            }
+          },
+          "description": "Atom localization F1 score."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/rmsd",
+          "name": "rmsd",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "rmsd"
+            }
+          },
+          "description": "Root mean square deviation of matched atoms."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/trajectory_rmsd",
+          "name": "trajectory_rmsd",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "trajectory_rmsd"
+            }
+          },
+          "description": "Trajectory RMSD for 4D methods."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/atom_identity_persistence",
+          "name": "atom_identity_persistence",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "atom_identity_persistence"
+            }
+          },
+          "description": "Fraction of atoms tracked consistently across phases."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "results/runtime_sec",
+          "name": "runtime_sec",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "aet-bench-results.csv"
+            },
+            "extract": {
+              "column": "runtime_sec"
+            }
+          },
+          "description": "Wall-clock runtime in seconds."
+        }
+      ]
+    }
+  ],
+  "rai:dataCollection": "Simulated data generated via ASE (nanoparticle construction), analytical Z^gamma forward model, and abTEM multislice. Real experimental data sourced from published Zenodo records: Zr-ZrO2 nanoparticles (DOI 10.5281/zenodo.12742309), MPEA2 high-entropy alloy (DOI 10.5281/zenodo.17310133), Pt Brownian tomography (DOI 10.5281/zenodo.15531575), RESIRE datasets (DOI 10.5281/zenodo.7819857), AlSiYb alloy (DOI 10.5281/zenodo.2578866), PdPt core-shell Zhou group (DOI 10.5281/zenodo.7733503), PdPt core-shell Yang group (DOI 10.5281/zenodo.8245312), NiPt multi-grained catalyst (DOI 10.5281/zenodo.15321070), AuPd icosahedral nanoparticles (DOI 10.5281/zenodo.14677350).",
+  "rai:dataCollectionType": "Automated simulation + published experimental measurements",
+  "rai:dataSocialImpact": "No direct social impact. Materials science research tool for advancing atomic-scale 3D/4D imaging of nanoparticles. No human subjects, no PII, no dual-use concerns.",
+  "rai:dataLimitations": "Real experimental data limited to publicly available Zenodo records. Brownian Pt tier uses synthetic projections from published reconstructions. Simulated data uses simplified Z^gamma forward model that does not capture dynamical scattering.",
+  "rai:dataBiases": "The benchmark is biased toward inorganic metal and oxide nanoparticles, HAADF-STEM acquisition, public Zenodo releases, and high-Z materials with strong contrast. Crystalline catalyst and alloy structures are better represented than biological specimens, low-Z soft materials, bright-field TEM, or in-situ experiments with severe drift and contamination.",
+  "rai:personalSensitiveInformation": "None. AET-Bench contains simulated nanoparticles, physical-science microscopy data, reconstruction volumes, atomic coordinates, and benchmark metrics. It contains no human subjects, personal identifiers, demographic attributes, health data, or other sensitive personal information.",
+  "rai:dataUseCases": "Intended uses include benchmarking atomic electron tomography reconstruction, atom localization, element classification, 4D trajectory tracking, robustness analysis, and reproducibility studies for materials-science imaging. The dataset is not intended for clinical decision-making, human-subject analysis, surveillance, or unsupported claims about microscopy modalities outside the documented HAADF-STEM and simulation settings.",
+  "rai:hasSyntheticData": true,
+  "prov:wasDerivedFrom": [
+    "https://doi.org/10.5281/zenodo.12742309",
+    "https://doi.org/10.5281/zenodo.17310133",
+    "https://doi.org/10.5281/zenodo.15531575",
+    "https://doi.org/10.5281/zenodo.7819857",
+    "https://doi.org/10.5281/zenodo.2578866",
+    "https://doi.org/10.5281/zenodo.7733503",
+    "https://doi.org/10.5281/zenodo.8245312",
+    "https://doi.org/10.5281/zenodo.15321070",
+    "https://doi.org/10.5281/zenodo.14677350"
+  ],
+  "prov:wasGeneratedBy": "Simulated tiers are generated by the repository scripts for analytical Z^gamma projections, binary-alloy particle construction, 4D dynamics, dose-controlled projections, and abTEM multislice simulations. Real tiers are converted from public Zenodo microscopy/reconstruction records into the repository's common NAF pickle format with manifests and per-sample metadata. Benchmark results are produced by scripts/run_benchmark.py and audited with scripts/validate_results.py.",
+  "isLiveDataset": false,
+  "citeAs": "@inproceedings{liu2026aetbench, title={{AET-Bench}: Pixel-Accurate Atomic Tomography Is Not Atom-Accurate}, author={Liu, Zicheng and Ma, Wenzhuo and Chen, Jintao and Huang, Di}, booktitle={Advances in Neural Information Processing Systems (NeurIPS) Evaluations and Datasets Track}, year={2026}}"
+}
