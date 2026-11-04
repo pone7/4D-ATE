@@ -2,13 +2,13 @@
 
 **NeurIPS 2026, Evaluations and Datasets Track**
 
-Zicheng Liu<sup>1</sup>, Wenzhuo Ma<sup>2</sup>, Jintao Chen<sup>5</sup>, Di Huang<sup>1,2,3,4,\*</sup>
+Zicheng Liu<sup>1</sup>, Wenzhuo Ma<sup>2</sup>, Jintao Chen<sup>3</sup>, Di Huang<sup>1,2,4,5,\*</sup>
 
 <sup>1</sup>BCC Lab, Hangzhou International Innovation Institute, Beihang University, Hangzhou, China<br>
-<sup>2</sup>Zhejiang Industrial Big Data and Robot Intelligent System Key Laboratory, Hangzhou Innovation Institute, Beihang University, Hangzhou, China<br>
-<sup>3</sup>State Key Laboratory of Complex and Critical Software Environment, Beihang University, Beijing, China<br>
-<sup>4</sup>Shenzhen Loop Area Institute, Shenzhen, China<br>
-<sup>5</sup>Zhejiang University, Hangzhou, China<br>
+<sup>2</sup>Shenzhen Loop Area Institute, Shenzhen, China<br>
+<sup>3</sup>Zhejiang University, Hangzhou, China<br>
+<sup>4</sup>Zhejiang Industrial Big Data and Robot Intelligent System Key Laboratory, Hangzhou Innovation Institute, Beihang University, Hangzhou, China<br>
+<sup>5</sup>State Key Laboratory of Complex and Critical Software Environment, Beihang University, Beijing, China<br>
 <sup>\*</sup>Corresponding author: Di Huang (dhuang@buaa.edu.cn)
 
 [Paper (OpenReview)](https://openreview.net/forum?id=GmdQ25dIWq) ·
