@@ -75,7 +75,7 @@ scripts/          evaluation harness, method wrappers, metrics, analyses
   metrics/                    FSC, trajectory / identity-persistence metrics
   baselines/                  reconstruction method wrappers
   analysis/                   extraction sensitivity, GT ceiling, native extraction, tau sweep
-  paper/                      reproduce the paper's tables and Figure 3 from results.jsonl
+  paper/                      reproduce the paper's tables, Figure 3, and the dataset SUMMARY.md
 tests/            unit tests, incl. the extraction-ceiling regression guard
 configs/          method configuration files
 figures/          paper Figures 1 and 2 (PNG + PDF)
